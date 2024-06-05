@@ -1,0 +1,45 @@
+<%- include('partials/header.ejs') %> <%- include('partials/homenavbar.ejs') %>
+
+<body>
+  <div class="container">
+    <hr />
+    <div class="jumbotron form-control bg-light">
+      <h1 class="display-4">Bem vindo</h1>
+
+      <p class="lead">
+        Este é um simples blog feito com Node.js, Express, MongoDB e Bootstrap.
+      </p>
+
+      <hr class="my-4" />
+
+      <p>
+        Ele usa o Bootstrap para o front-end, Node.js e Express para o back-end
+        e MongoDB para o banco de dados.
+      </p>
+
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+    <hr />
+    <% articles.forEach(article => { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= article.title %></h2>
+      </div>
+      <dic class="card-body">
+        <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+      </dic>
+    </div>
+    <br />
+    <% }) %>
+
+    <div class="row">
+      <div class="col col-12">
+        <a href="/articles/page/2" style="float: right">Next >></a>
+      </div>
+      <hr />
+    </div>
+    <hr />
+  </div>
+</body>
+
+<%- include('partials/footer.ejs') %>
